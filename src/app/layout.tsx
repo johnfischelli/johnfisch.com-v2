@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header'
@@ -22,6 +23,16 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-8SB4JD10MC" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', 'G-8SB4JD10MC');
+          `}
+        </Script>
       </body>
     </html>
   )
