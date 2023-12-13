@@ -25,3 +25,22 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.post-content p {
+  margin-bottom: theme('spacing.4');
+}
+
+blockquote {
+  font-style: italic;
+  margin: theme('spacing.8') 0;
+  padding-left: theme('spacing.4');
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #10b981;
+}
