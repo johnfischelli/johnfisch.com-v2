@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default async function Page() {
     const { posts } = await listBlogPosts();
     return (
-        <main className="min-h-screen flex p-24 justify-center font-mono">
+        <main className="min-h-screen flex px-8 py-12 justify-center font-mono">
             <div className="max-w-3xl w-full">
-                <h1 className="text-5xl">Blog</h1>
+                <h1 className="text-3xl sm:text-5xl">Blog</h1>
                 <hr className='my-6' />
                 { posts.map((p) => {
                     return (

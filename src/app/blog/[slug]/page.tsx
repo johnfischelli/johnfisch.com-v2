@@ -18,9 +18,9 @@ type Props = {
 export default async function Page({ params }: Props) {
     const { title, date, content } = await getCurrentBlogPost(params.slug);
     return (
-        <main className="min-h-screen flex p-24 justify-center font-mono">
+        <main className="min-h-screen flex px-8 py-24 justify-center font-mono">
             <div className="max-w-3xl w-full">
-                <h1 className="text-5xl mb-4">{title}</h1>
+                <h1 className="text-3xl sm:text-5xl mb-4">{title}</h1>
                 <div className='flex items-center gap-4'>
                     <div className="rounded-full overflow-hidden w-10 border-2 border-white">
                         <Image src="/john.png" width={40} height={40} alt="Portrait of John Fischelli" />

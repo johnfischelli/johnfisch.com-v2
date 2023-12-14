@@ -28,7 +28,7 @@ body {
 
 
 .post-content p {
-  margin-bottom: theme('spacing.4');
+  margin-bottom: theme('spacing.8');
 }
 
 blockquote {
