@@ -4,8 +4,6 @@ import Typing from '@/components/typing';
 import DateFormat from '@/components/dateformat';
 import { getLatestBlogPost } from '@/app/utils';
 
-export const revalidate = 60
-
 export default async function Home() {
   const latestBlogPost = await getLatestBlogPost();
   return (
