@@ -31,6 +31,14 @@ body {
   margin-bottom: theme('spacing.8');
 }
 
+.post-content h2 {
+  @apply text-2xl sm:text-4xl mb-4;
+}
+
+.post-content code {
+  @apply block font-mono p-2 bg-slate-800;
+}
+
 blockquote {
   font-style: italic;
   margin: theme('spacing.8') 0;

@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import SanityImage from '@/components/sanity/image';
 import Image from 'next/image';
 import { PortableText } from "@portabletext/react";
 import { getCurrentBlogPost } from "@/app/utils"
@@ -17,10 +18,20 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     }   
 }
 
+const myPortableTextComponents = {
+    types: {
+        image: ({ value }) => {
+            return (
+                <SanityImage {...value} />
+            );
+        },
+    },
+};
+
 export default async function Page({ params }: Props) {
     const { title, date, content } = await getCurrentBlogPost(params.slug);
     return (
-        <main className="min-h-screen flex px-8 py-24 justify-center font-mono">
+        <main className="min-h-screen flex px-8 py-24 justify-center">
             <div className="max-w-3xl w-full">
                 <h1 className="text-3xl sm:text-5xl mb-4">{title}</h1>
                 <div className='flex items-center gap-4'>
@@ -31,7 +42,7 @@ export default async function Page({ params }: Props) {
                 </div>
                 <hr className="my-6" />
                 <div className="post-content text-xl">
-                    <PortableText value={content} />
+                    <PortableText value={content} components={myPortableTextComponents} />
                 </div>
             </div>
         </main>

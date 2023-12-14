@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 export default async function Page() {
     const { posts } = await listBlogPosts();
     return (
-        <main className="min-h-screen flex px-8 py-12 justify-center font-mono">
+        <main className="min-h-screen flex px-8 py-24 justify-center">
             <div className="max-w-3xl w-full">
                 <h1 className="text-3xl sm:text-5xl">Blog</h1>
                 <hr className='my-6' />
                 { posts.map((p) => {
                     return (
-                    <p key={p.slug.current} className='text-center'>
+                    <p key={p.slug.current} className='mb-6'>
                         <Link href={`/blog/${p.slug.current}`}>
                         {p.title}
                         </Link>

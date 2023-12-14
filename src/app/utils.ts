@@ -3,11 +3,11 @@ import { notFound } from 'next/navigation';
 import { createClient } from 'next-sanity';
 import { LatestBlogPost, BlogPost, BlogPostListings } from './types';
 
-const client = createClient({
+export const client = createClient({
   projectId: process.env.SANITY_PROJECT_ID,
   dataset: process.env.SANITY_DATASET,
   apiVersion: process.env.SANITY_API_VERSION,
-  useCdn: false
+  useCdn: true
 });
 
 export const getLatestBlogPost = cache(async (): Promise<LatestBlogPost> => {

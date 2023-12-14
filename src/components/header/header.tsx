@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const Header = () => (
-  <header className='fixed top-0 border-t-2 border-white w-full bg-black/80 shadow-xl font-mono'>
+  <header className='fixed top-0 border-t-2 border-white w-full bg-black/80 shadow-xl'>
     <nav aria-labelledby="main-menu" className='text-center'>
         <ul className='flex justify-center'>
           <li className='p-4'><Link href="/">Home</Link></li>
