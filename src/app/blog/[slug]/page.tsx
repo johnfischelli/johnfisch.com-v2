@@ -10,7 +10,7 @@ type Props = {
     }
 }
 
-export async function generateMetaData({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
     const { title } = await getCurrentBlogPost(params.slug);
     return {
         title: `${title} | John Fischelli`
