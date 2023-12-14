@@ -1,18 +1,20 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Image from 'next/image';
 import { PortableText } from "@portabletext/react";
 import { getCurrentBlogPost } from "@/app/utils"
 import DateFormat from "@/components/dateformat";
 
-export const metadata: Metadata = {
-    title: 'John Fischelli',
-    description: 'The personal blog and site of John Fischelli',
-}
-
 type Props = {
     params: {
         slug: string;
     }
+}
+
+export async function generateMetaData({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+    const { title } = await getCurrentBlogPost(params.slug);
+    return {
+        title: `${title} | John Fischelli`
+    }   
 }
 
 export default async function Page({ params }: Props) {
