@@ -1,9 +1,9 @@
 import type { Metadata, ResolvingMetadata } from 'next'
-import SanityImage from '@/components/sanity/image';
 import Image from 'next/image';
 import { PortableText } from "@portabletext/react";
 import { getCurrentBlogPost } from "@/app/utils"
 import DateFormat from "@/components/dateformat";
+import SanityImage from '@/components/sanity/image';
 
 type Props = {
     params: {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
 const myPortableTextComponents = {
     types: {
-        image: ({ value }) => {
+        image: ({ value }: any) => {
             return (
                 <SanityImage {...value} />
             );
